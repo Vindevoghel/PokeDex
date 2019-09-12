@@ -3,6 +3,34 @@ body{
     font-family: 'Signika', sans-serif;
 }
 
+#topFiller{
+    height: 50px;
+}
+
+#midSection{
+    display: flex;
+    flex-direction: row;
+}
+
+#leftContainer{
+    background-color: #ED4234;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+    width: 40%;
+}
+#evoContainer{
+    background-color: grey;
+    color: limegreen;
+    border-radius: 35px;
+    width: 300px;
+    height: 200px;
+    align-items: center;
+    text-align: center;
+}
 #searchContainer{
     background-color: none;
     display: flex;
@@ -12,11 +40,14 @@ body{
     flex-direction: column;
 }
 #searchBox{
-    background-color: greenyellow;
+    background-color: limegreen;
+    color: black;
     border-color: #ED4234;
     border-width: 5px;
+    border-radius: 35px;
     height: 50px;
-    width: 33%;
+    width: 300px;
+    text-align: center;
 }
 #pokeButton{
     background-color: black;
@@ -27,29 +58,32 @@ body{
     height: 50px;
 }
 
-#mainContainer{
+#rightContainer{
     background-color: #ED4234;
     border-radius: 35px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     height: 500px;
-    width: 75%;
+    width: 40%;
+}
+#textArea{
+    background-color: limegreen;
+    color: black;
+    border-radius: 35px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
 }
 #pokeImgContainer{
     background-color: grey;
+    color: limegreen;
     border-radius: 35px;
-    width: 250px;
+    width: 300px;
+    height: 200px;
     align-items: center;
-}
-
-#textArea{
-    background-color: limegreen;
-    border-radius: 35px;
-    width: 250px;
-}
-#evoContainer{
-    background-color: grey;
-    border-radius: 35px;
-    width: 250px;
+    text-align: center;
 }
 
 #pokemonLogo{
