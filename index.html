@@ -21,47 +21,59 @@
 
 <section class="container" id="midSection">
 
-    <div class="container" id="leftContainer">
+    <div class="container" id="headMidSection">
 
-        <div class="container" style="align-self: flex-start" id="evoContainer">
-            <h2 id="targetNameTwo">Name</h2>
-            <img src="./assets/pokemonegg.jpg" alt="example pre evo" id="evoImg">
-            <h5 id="targetIdNrTwo">ID</h5>
-        </div>
-
-        <div class="container" id="searchContainer">
-            <input type="text" id="searchBox" class="form-control" label="pokeInput" value="pokemon">
-            <button type="button" id="pokeButton" class="btn btn-light">Search</button>
-        </div>
+        <header class="container" style="align-self: center" id="pokemonLogo">
+            <img src="./assets/pokemon-logo.png" alt="Pokemon Logo">
+        </header>
 
     </div>
 
-    <div class="container" id="rightContainer">
+    <div class="container" id="bottomMidSection">
 
-        <div class="container" id="textArea">
+        <div class="container" style="align-self: flex-start" id="leftContainer">
 
-            <div class="container">
-                <h2 id="targetMoveOne">Move One</h2>
+            <div class="container" style="align-self: flex-start" id="evoContainer">
+                <h2 id="targetNameTwo">Name</h2>
+                <img src="./assets/pokemonegg.jpg" alt="example pre evo" id="evoImg">
+                <h5 id="targetIdNrTwo">ID</h5>
             </div>
 
-            <div class="container">
-                <h2 id="targetMoveTwo">Move Two</h2>
-            </div>
-
-            <div class="container">
-                <h2 id="targetMoveThree">Move Three</h2>
-            </div>
-
-            <div class="container">
-                <h2 id="targetMoveFour">Move Four</h2>
+            <div class="container" id="searchContainer">
+                <input type="text" id="searchBox" placeholder="pokemon" class="form-control" label="pokeInput" value="">
+                <button type="button" id="pokeButton" class="btn btn-light">Search</button>
             </div>
 
         </div>
 
-        <div class="container" id="pokeImgContainer">
-            <h2 id="targetName">Name</h2>
-            <img src="./assets/pokeball.png" alt="example image" id="pokeImg">
-            <h5 id="targetIdNr">ID</h5>
+        <div class="container" style="align-self: flex-end" id="rightContainer">
+
+            <div class="container" id="textArea">
+
+                <div class="container">
+                    <h2 id="targetMoveOne">Move One</h2>
+                </div>
+
+                <div class="container">
+                    <h2 id="targetMoveTwo">Move Two</h2>
+                </div>
+
+                <div class="container">
+                    <h2 id="targetMoveThree">Move Three</h2>
+                </div>
+
+                <div class="container">
+                    <h2 id="targetMoveFour">Move Four</h2>
+                </div>
+
+            </div>
+
+            <div class="container" id="pokeImgContainer">
+                <h2 id="targetName">Name</h2>
+                <img src="./assets/pokeball.png" alt="example image" id="pokeImg">
+                <h5 id="targetIdNr">ID</h5>
+            </div>
+
         </div>
 
     </div>
@@ -70,9 +82,7 @@
 
 <footer>
 
-    <div class="container" style="align-self: center" id="pokemonLogo">
-        <img src="./assets/pokemon-logo.png" alt="Pokemon Logo">
-    </div>
+    <div id="bottomFiller"></div>
 
 </footer>
 
