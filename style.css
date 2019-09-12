@@ -1,0 +1,14 @@
+body{
+    background-image: radial-gradient(circle, #BEE1FD, #5AC4FD, #54C3FD, #4AB6FD, #33A3FC);
+}
+
+.flex-container{
+    display: flex;
+    height: 650px;
+    align-items: center;
+}
+
+#mainContainer{
+    background-color: none;
+
+}

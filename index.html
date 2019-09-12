@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>PokeDex</title>
+</head>
+<body>
+
+<div class="flex-container" id="mainContainer">
+    
+    <div class="container" id="pokeImgContainer">
+        <img src="./assets/charizardEx.jpeg" alt="example image">
+    </div>
+
+    <input type="text" id="textbox" class="form-control" label="pokeInput" value="pokemon">
+    <button type="button" id="pokeButton" class="btn btn-light">Search</button>
+
+    <div class="container" id="targetName">
+        <h2>Name</h2>
+    </div>
+
+    <div class="container" id="targetIdNr">
+        <h2>ID</h2>
+    </div>
+
+    <div class="flex-container" id="evoContainer">
+        <img src="./assets/charmelionEx.jpeg" alt="example pre evo">
+    </div>
+
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
