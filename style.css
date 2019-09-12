@@ -1,6 +1,6 @@
 body{
     background-image: radial-gradient(circle, #BEE1FD, #5AC4FD, #54C3FD, #4AB6FD, #33A3FC);
-
+    font-family: 'Signika', sans-serif;
 }
 
 #searchContainer{
@@ -12,32 +12,35 @@ body{
     flex-direction: column;
 }
 #searchBox{
-    border-color: #8796FF;
+    border-color: #ED4234;
     border-width: 5px;
     height: 50px;
     width: 33%;
 }
 #pokeButton{
-    border-color: #8796FF;
+    border-color: #ED4234;
     border-width: 5px;
     height: 50px;
 }
 
 #mainContainer{
-    background-color: lawngreen;
-    display: inline-flex;
+    background-color: #BEE1FD;
+    border-width: 5px;
+    border-color: #ED4234;
+    display: flex;
     height: 500px;
     width: 75%;
 }
 #pokeImgContainer{
-    background-color: deeppink;
+    background-color: none;
     width: 250px;
+    align-items: center;
 }
 #textArea{
-    background-color: yellow;
+    background-color: none;
     width: 250px;
 }
 #evoContainer{
-    background-color: blue;
+    background-color: none;
     width: 250px;
 }
