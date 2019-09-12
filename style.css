@@ -12,35 +12,50 @@ body{
     flex-direction: column;
 }
 #searchBox{
+    background-color: greenyellow;
     border-color: #ED4234;
     border-width: 5px;
     height: 50px;
     width: 33%;
 }
 #pokeButton{
-    border-color: #ED4234;
+    background-color: black;
+    color: yellow;
+    border-radius: 35px;
+    border-color: black;
     border-width: 5px;
     height: 50px;
 }
 
 #mainContainer{
-    background-color: #BEE1FD;
-    border-width: 5px;
-    border-color: #ED4234;
+    background-color: #ED4234;
+    border-radius: 35px;
     display: flex;
     height: 500px;
     width: 75%;
 }
 #pokeImgContainer{
-    background-color: none;
+    background-color: grey;
+    border-radius: 35px;
     width: 250px;
     align-items: center;
 }
+
 #textArea{
-    background-color: none;
+    background-color: limegreen;
+    border-radius: 35px;
     width: 250px;
 }
 #evoContainer{
-    background-color: none;
+    background-color: grey;
+    border-radius: 35px;
     width: 250px;
+}
+
+#pokemonLogo{
+    background-color: none;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
 }
