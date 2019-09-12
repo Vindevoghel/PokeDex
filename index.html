@@ -11,24 +11,50 @@
 </head>
 <body>
 
-<div class="flex-container" id="mainContainer">
+<header class="flex-container">
+
+    <div class="flex-container" id="searchContainer">
+        <input type="text" id="searchBox" class="form-control" label="pokeInput" value="pokemon">
+        <button type="button" id="pokeButton" class="btn btn-light">Search</button>
+    </div>
+
+</header>
+
+<div class="container" id="mainContainer">
     
     <div class="container" id="pokeImgContainer">
         <img src="./assets/charizardEx.jpeg" alt="example image">
     </div>
 
-    <input type="text" id="textbox" class="form-control" label="pokeInput" value="pokemon">
-    <button type="button" id="pokeButton" class="btn btn-light">Search</button>
+    <div class="container" id="textArea">
 
-    <div class="container" id="targetName">
-        <h2>Name</h2>
+        <div class="container">
+            <h2 id="targetName">Name</h2>
+        </div>
+
+        <div class="container">
+            <h2 id="targetIdNr">ID</h2>
+        </div>
+
+        <div class="container">
+            <h2 id="targetMoveOne">Move One</h2>
+        </div>
+
+        <div class="container">
+            <h2 id="targetMoveTwo">Move Two</h2>
+        </div>
+
+        <div class="container">
+            <h2 id="targetMoveThree">Move Three</h2>
+        </div>
+
+        <div class="container">
+            <h2 id="targetMoveFour">Move Four</h2>
+        </div>
+
     </div>
 
-    <div class="container" id="targetIdNr">
-        <h2>ID</h2>
-    </div>
-
-    <div class="flex-container" id="evoContainer">
+    <div class="container" id="evoContainer">
         <img src="./assets/charmelionEx.jpeg" alt="example pre evo">
     </div>
 
