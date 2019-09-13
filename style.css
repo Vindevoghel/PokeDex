@@ -41,10 +41,7 @@ aside {
     box-shadow: 0 0 70px 10px #33A3FC;
 }
 
-aside:hover header img {
-    animation: profile_image 25s linear both;
-    animation-delay: 25s;
-}
+
 
 header {
     text-align: center;
@@ -58,7 +55,6 @@ header h1 {
     font-size: 25px;
     display: inline-block;
     padding: 10px;
-    transition: all ease 0.500s;
 }
 
 aside:hover header h1 {
@@ -76,10 +72,6 @@ header h2 {
     font-weight: normal;
     line-height: 0px;
     margin: 0;
-}
-
-aside:hover .profile-bio {
-    opacity: 1;
 }
 
 #topFiller{
@@ -258,12 +250,7 @@ aside:hover .profile-bio {
         transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     }
 }
-/*NAME ANIMATE */
 
-aside:hover header h1 {
-    animation: name_and_job 1500ms linear both;
-    animation-delay: 0.4s;
-}
 
 @keyframes name_and_job {
     0% {
