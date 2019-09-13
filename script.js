@@ -1,10 +1,11 @@
-document.getElementById("pokeButton").addEventListener("submit", function () {
+document.getElementById("searchContainer").addEventListener("submit", function (event) {
+    event.preventDefault()
     pokeID = document.getElementById("searchBox").value;
 
 
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokeID + '/')
         .then(function (response) {
-            console.log(response.data.sprites.front_default);
+            console.log(response);
             document.getElementById("targetName").innerText = response.data.name;
             document.getElementById("targetIdNr").innerText = response.data.id;
             if (response.data.sprites.front_default !== null) {
@@ -17,10 +18,10 @@ document.getElementById("pokeButton").addEventListener("submit", function () {
             console.log(moveArray);
 
 
-            document.getElementById("targetMoveOne").innerText = dashRemover(moveArray[0]);
-            document.getElementById("targetMoveTwo").innerText = dashRemover(moveArray[1]);
-            document.getElementById("targetMoveThree").innerText = dashRemover(moveArray[2]);
-            document.getElementById("targetMoveFour").innerText = dashRemover(moveArray[3]);
+            document.getElementById("targetMoveOne").innerText = moveArray[0];
+            document.getElementById("targetMoveTwo").innerText = moveArray[1];
+            document.getElementById("targetMoveThree").innerText = moveArray[2];
+            document.getElementById("targetMoveFour").innerText = moveArray[3];
 
 
             let evolution = response.data.species.url;
@@ -60,12 +61,11 @@ document.getElementById("pokeButton").addEventListener("submit", function () {
             console.log(error);
         });
 
-})
-;
+});
 
 
 function fourRandomMoves(allMoves) {
-    let moveArray = new Array();
+    let moveArray = [];
     for (i = 0; i < allMoves.length; i++) {
         moveArray.push(allMoves[Math.floor(Math.random() * allMoves.length)].move.name);
         moveArray[i] = dashRemover(moveArray[i]);
@@ -79,13 +79,12 @@ function uniqueArray(array) {
     return array.filter(function (item, index) {
         return array.indexOf(item) >= index;
     });
-    }
+}
 
-    function capitaliser(element) {
-        return element.charAt(0).toUpperCase();
-    }
+function capitaliser(element) {
+    return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+}
 
-    function dashRemover(element) {
-        capitaliser(element);
-        return element.replace(/-/g, ' ');
-    }
+function dashRemover(element) {
+    return element.replace(/-/g, ' ');
+}
