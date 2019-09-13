@@ -1,20 +1,27 @@
-document.getElementById("pokeButton").addEventListener("click", function () {
+document.getElementById("pokeButton").addEventListener("submit", function () {
     pokeID = document.getElementById("searchBox").value;
+
 
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokeID + '/')
         .then(function (response) {
+            console.log(response.data.sprites.front_default);
             document.getElementById("targetName").innerText = response.data.name;
             document.getElementById("targetIdNr").innerText = response.data.id;
-            document.getElementById("pokeImg").src = response.data.sprites.front_default;
+            if (response.data.sprites.front_default !== null) {
+                document.getElementById("pokeImg").src = response.data.sprites.front_default;
+            } else {
+                document.getElementById("pokeImg").src = "./assets/noimage.png";
+            }
 
-            let fourMoves = [];
-            fourRandomMoves(response.data.moves, fourMoves);
+            let moveArray = fourRandomMoves(response.data.moves);
+            console.log(moveArray);
 
 
-            document.getElementById("targetMoveOne").innerText = dashRemover(fourMoves[0]);
-            document.getElementById("targetMoveTwo").innerText = dashRemover(fourMoves[1]);
-            document.getElementById("targetMoveThree").innerText = dashRemover(fourMoves[2]);
-            document.getElementById("targetMoveFour").innerText = dashRemover(fourMoves[3]);
+            document.getElementById("targetMoveOne").innerText = dashRemover(moveArray[0]);
+            document.getElementById("targetMoveTwo").innerText = dashRemover(moveArray[1]);
+            document.getElementById("targetMoveThree").innerText = dashRemover(moveArray[2]);
+            document.getElementById("targetMoveFour").innerText = dashRemover(moveArray[3]);
+
 
             let evolution = response.data.species.url;
 
@@ -22,16 +29,20 @@ document.getElementById("pokeButton").addEventListener("click", function () {
                 .then(function (response) {
                         console.log(response);
                         if (response.data.evolves_from_species === null) {
-                            document.getElementById("targetNameTwo").innerText = "No previous evolution";
+                            document.getElementById("targetNameTwo").innerText = "No prev evo";
                             document.getElementById("targetIdNrTwo").innerText = "0";
                         } else {
                             let evoID = response.data.evolves_from_species.name;
                             axios.get('https://pokeapi.co/api/v2/pokemon/' + evoID + '/')
                                 .then(function (response) {
-                                    console.log(response);
+                                    console.log(response.data.sprites.front_default);
                                     document.getElementById("targetNameTwo").innerText = response.data.name;
                                     document.getElementById("targetIdNrTwo").innerText = response.data.id;
-                                    document.getElementById("evoImg").src = response.data.sprites.front_default;
+                                    if (response.data.sprites.front_default !== null) {
+                                        document.getElementById("evoImg").src = response.data.sprites.front_default;
+                                    } else {
+                                        document.getElementById("evoImg").src = "./assets/noimage.png";
+                                    }
 
                                 })
                                 .catch(function (error) {
@@ -53,18 +64,28 @@ document.getElementById("pokeButton").addEventListener("click", function () {
 ;
 
 
-function fourRandomMoves(array, newArray) {
-    for (i = 0; i < 4; i++) {
-        newArray.push(array[Math.floor(Math.random() * array.length)].move.name);
-        console.log(array[Math.floor(Math.random() * array.length)].move.name);
+function fourRandomMoves(allMoves) {
+    let moveArray = new Array();
+    for (i = 0; i < allMoves.length; i++) {
+        moveArray.push(allMoves[Math.floor(Math.random() * allMoves.length)].move.name);
+        moveArray[i] = dashRemover(moveArray[i]);
+        moveArray[i] = capitaliser(moveArray[i]);
+        console.log(moveArray[i]);
     }
+    return uniqueArray(moveArray);
 }
 
-function capitaliser(element) {
-    return element.charAt(0).toUpperCase();
-}
+function uniqueArray(array) {
+    return array.filter(function (item, index) {
+        return array.indexOf(item) >= index;
+    });
+    }
 
-function dashRemover(element) {
-    capitaliser(element)
-    return element.replace(/-/g, ' ');
-}
+    function capitaliser(element) {
+        return element.charAt(0).toUpperCase();
+    }
+
+    function dashRemover(element) {
+        capitaliser(element);
+        return element.replace(/-/g, ' ');
+    }
