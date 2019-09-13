@@ -1,13 +1,17 @@
 document.getElementById("searchContainer").addEventListener("submit", function (event) {
-    event.preventDefault()
+    event.preventDefault();
     pokeID = document.getElementById("searchBox").value;
 
 
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokeID + '/')
         .then(function (response) {
-            console.log(response);
-            document.getElementById("targetName").innerText = response.data.name;
-            document.getElementById("targetIdNr").innerText = response.data.id;
+            //console.log(response);
+            console.log(capitaliser(response.data.types[0].type.name));
+
+            document.getElementById("targetName").innerText = capitaliser(response.data.name);
+            document.getElementById("targetIdNr").innerText = response.data.id + " " + capitaliser(response.data.types[0].type.name);
+
+
             if (response.data.sprites.front_default !== null) {
                 document.getElementById("pokeImg").src = response.data.sprites.front_default;
             } else {
@@ -15,14 +19,15 @@ document.getElementById("searchContainer").addEventListener("submit", function (
             }
 
             let moveArray = fourRandomMoves(response.data.moves);
-            console.log(moveArray);
-
-
             document.getElementById("targetMoveOne").innerText = moveArray[0];
             document.getElementById("targetMoveTwo").innerText = moveArray[1];
-            document.getElementById("targetMoveThree").innerText = moveArray[2];
-            document.getElementById("targetMoveFour").innerText = moveArray[3];
-
+            if (moveArray[2] !== undefined) {
+                document.getElementById("targetMoveThree").innerText = moveArray[2];
+                document.getElementById("targetMoveFour").innerText = moveArray[3];
+            } else {
+                document.getElementById("targetMoveThree").innerText = "";
+                document.getElementById("targetMoveFour").innerText = "";
+            }
 
             let evolution = response.data.species.url;
 
@@ -37,8 +42,8 @@ document.getElementById("searchContainer").addEventListener("submit", function (
                             axios.get('https://pokeapi.co/api/v2/pokemon/' + evoID + '/')
                                 .then(function (response) {
                                     console.log(response.data.sprites.front_default);
-                                    document.getElementById("targetNameTwo").innerText = response.data.name;
-                                    document.getElementById("targetIdNrTwo").innerText = response.data.id;
+                                    document.getElementById("targetNameTwo").innerText = capitaliser(response.data.name);
+                                    document.getElementById("targetIdNrTwo").innerText = response.data.id + " " + capitaliser(response.data.types[0].type.name);
                                     if (response.data.sprites.front_default !== null) {
                                         document.getElementById("evoImg").src = response.data.sprites.front_default;
                                     } else {
@@ -70,7 +75,6 @@ function fourRandomMoves(allMoves) {
         moveArray.push(allMoves[Math.floor(Math.random() * allMoves.length)].move.name);
         moveArray[i] = dashRemover(moveArray[i]);
         moveArray[i] = capitaliser(moveArray[i]);
-        console.log(moveArray[i]);
     }
     return uniqueArray(moveArray);
 }
