@@ -1,6 +1,6 @@
 document.getElementById("dex").addEventListener("click", function(){
     document.getElementById("dex").classList.add("open");
-});
+
 
 document.getElementById("searchContainer").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -9,7 +9,7 @@ document.getElementById("searchContainer").addEventListener("submit", function (
 
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokeID + '/')
         .then(function (response) {
-            console.log(response);
+            //console.log(response);
 
             document.getElementById("targetName").innerText = capitaliser(response.data.name);
             document.getElementById("targetIdNr").innerText = response.data.id + " " + capitaliser(response.data.types[0].type.name);
@@ -38,7 +38,8 @@ document.getElementById("searchContainer").addEventListener("submit", function (
 
             axios.get(evolution)
                 .then(function (response) {
-                        console.log(response);
+                        console.log(response.data.evolution_chain.url);
+
 
                         if (response.data.evolves_from_species === null) {
                             document.getElementById("targetNameTwo").innerText = "No prev evo";
@@ -78,7 +79,7 @@ document.getElementById("searchContainer").addEventListener("submit", function (
         });
 
 });
-
+});
 
 function randomMoves(allMoves) {
     let moveArray = [];
