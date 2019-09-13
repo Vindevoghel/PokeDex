@@ -23,8 +23,8 @@
 
     <div class="container" id="headMidSection">
 
-        <header class="container" style="align-self: center" id="pokemonLogo">
-            <img src="./assets/pokemon-logo.png" alt="Pokemon Logo">
+        <header class="container" style="align-self: center" id="pokedex">
+            <h1>PokeDex</h1>
         </header>
 
     </div>
@@ -33,17 +33,23 @@
 
         <div class="container" style="align-self: flex-start" id="leftContainer">
 
+            <div class="container" id="pokeImgContainer">
+                <h2 id="targetName">Name</h2>
+                <img src="./assets/pokeball.png" alt="example image" id="pokeImg">
+                <h5 id="targetIdNr">ID</h5>
+            </div>
+
             <div class="container" style="align-self: flex-start" id="evoContainer">
                 <h2 id="targetNameTwo">Name</h2>
                 <img src="./assets/pokemonegg.jpg" alt="example pre evo" id="evoImg">
                 <h5 id="targetIdNrTwo">ID</h5>
             </div>
 
-            <div class="container" id="searchContainer">
-                <input type="text" id="searchBox" placeholder="pokemon" class="form-control" label="pokeInput" value="">
-                <button type="button" id="pokeButton" class="btn btn-light">Search</button>
-            </div>
 
+        </div>
+
+        <div class="container" style="align-self: flex-end" id="pokemonLogo">
+        <img src="./assets/balllogo.png" alt="Pokebal Logo">
         </div>
 
         <div class="container" style="align-self: flex-end" id="rightContainer">
@@ -68,11 +74,10 @@
 
             </div>
 
-            <div class="container" id="pokeImgContainer">
-                <h2 id="targetName">Name</h2>
-                <img src="./assets/pokeball.png" alt="example image" id="pokeImg">
-                <h5 id="targetIdNr">ID</h5>
-            </div>
+            <form class="container" id="searchContainer">
+                <input type="text" id="searchBox" placeholder="pokemon" class="form-control" label="pokeInput" value="">
+                <button type="button" id="pokeButton" class="btn btn-light">Search</button>
+            </form>
 
         </div>
 
