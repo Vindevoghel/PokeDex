@@ -30,7 +30,7 @@ header h2 {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     font-size: 17px;
     font-weight: normal;
-    line-height: 0px;
+    line-height: 0;
     margin: 0;
 }
 
@@ -39,7 +39,8 @@ header h2 {
 }
 
 #midSection {
-    background-color: #ED4234;
+    background: rgb(255,204,204);
+    background: linear-gradient(137deg, rgba(255,204,204,1) 0%, rgba(255,0,0,1) 45%);
     border-radius: 8px;
 }
 
@@ -50,7 +51,8 @@ header h2 {
 }
 
 #leftContainer, #rightContainer {
-    background-color: grey;
+    background: rgb(135,135,135);
+    background: radial-gradient(circle, rgba(135,135,135,1) 0%, rgba(69,69,69,1) 100%);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -73,7 +75,6 @@ header h2 {
 }
 
 #searchContainer {
-    background-color: grey;
     display: flex;
     height: 150px;
     justify-content: center;

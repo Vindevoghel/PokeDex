@@ -28,27 +28,19 @@ document.getElementById("searchContainer").addEventListener("submit", function (
             document.getElementById("targetIdNr").innerText = idTypeSetter(response);
             document.getElementById("pokeImg").src = spriteSetter(response);
 
-            const randomMoves = (allMoves) => {
+
+
+
+            const randomUniqueMovesArrayMaker = (response) => {
                 let moveArray = [];
-                for (let i = 0; i < allMoves.length; i++) {
-                    moveArray.push(allMoves[Math.floor(Math.random() * allMoves.length)].move.name);
+                for (let i = 0; i < response.length; i++) {
+                    moveArray.push(response[Math.floor(Math.random() * response.length)].move.name);
                     console.log(moveArray);
                 }
-                return moveArray;
+                return [... new Set (moveArray)];
             };
 
-            function uniqueArray(array) {
-                return array.filter(function (item, index) {
-                    return array.indexOf(item) >= index;
-                });
-            }
-
-            const moveArrayMaker = (response) => {
-                return uniqueArray(randomMoves(response.data.moves));
-
-            };
-
-            let moveArray = moveArrayMaker(response);
+            let moveArray = randomUniqueMovesArrayMaker(response.data.moves);
 
             for (let i = 0; i < 4; i++) {
                 if (moveArray[i] !== undefined) {
@@ -66,7 +58,7 @@ document.getElementById("searchContainer").addEventListener("submit", function (
                         if (response.data.evolves_from_species === null) {
                             document.getElementById("targetNameTwo").innerText = "No prev evo";
                             document.getElementById("targetIdNrTwo").innerText = "0";
-                            document.getElementById("evoImg").src = "./assets/pokemonegg.jpg"
+                            document.getElementById("evoImg").src = "./assets/pokemonegg.png"
                         } else {
                             let evoID = response.data.evolves_from_species.name;
                             axios.get('https://pokeapi.co/api/v2/pokemon/' + evoID + '/')
