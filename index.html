@@ -1,92 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="assets/dexicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/dexicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="./reset.css">-->
     <link rel="stylesheet" href="./style.css">
     <title>Pokedex 2.0</title>
 </head>
 <body>
 
-<aside class="profile-card" id="dex">
+<section class="container" id="midSection">
 
-    <header>
+    <div class="container" id="headMidSection">
 
-        <h1>
-            <img src="./assets/balllogo.png" alt="Barend">
-        </h1>
+        <header class="container" style="align-self: center" id="pokedex">
+            <h1>PokeDex</h1>
+        </header>
 
-    </header>
+    </div>
 
-    <section class="container" id="midSection">
+    <div class="container" id="bottomMidSection">
 
-        <div class="container" id="headMidSection">
+        <div class="container" style="align-self: flex-start" id="leftContainer">
 
-            <header class="container" style="align-self: center" id="pokedex">
-                <h1>PokeDex</h1>
-            </header>
+            <div class="container" id="pokeImgContainer">
+                <h2 id="targetName">Name</h2>
+                <img src="./assets/pokeball.png" alt="example image" id="pokeImg">
+                <h5 id="targetIdNr">ID</h5>
+            </div>
+
+            <div class="container" style="align-self: flex-start" id="evoContainer">
+                <h2 id="targetNameTwo">Name</h2>
+                <img src="./assets/pokemonegg.jpg" alt="example pre evo" id="evoImg">
+                <h5 id="targetIdNrTwo">ID</h5>
+            </div>
+
 
         </div>
 
-        <div class="container" id="bottomMidSection">
+        <div class="container" style="align-self: flex-end" id="rightContainer">
 
-            <div class="container" style="align-self: flex-start" id="leftContainer">
+            <div class="container" id="textArea">
 
-                <div class="container" id="pokeImgContainer">
-                    <h2 id="targetName">Name</h2>
-                    <img src="./assets/pokeball.png" alt="example image" id="pokeImg">
-                    <h5 id="targetIdNr">ID</h5>
+                <div class="container">
+                    <h2 id="targetMoveOne" class="moves">Move One</h2>
                 </div>
 
-                <div class="container" style="align-self: flex-start" id="evoContainer">
-                    <h2 id="targetNameTwo">Name</h2>
-                    <img src="./assets/pokemonegg.jpg" alt="example pre evo" id="evoImg">
-                    <h5 id="targetIdNrTwo">ID</h5>
+                <div class="container">
+                    <h2 id="targetMoveTwo" class="moves">Move Two</h2>
                 </div>
 
+                <div class="container">
+                    <h2 id="targetMoveThree" class="moves">Move Three</h2>
+                </div>
+
+                <div class="container">
+                    <h2 id="targetMoveFour" class="moves">Move Four</h2>
+                </div>
 
             </div>
 
-            <div class="container" style="align-self: flex-end" id="rightContainer">
-
-                <div class="container" id="textArea">
-
-                    <div class="container">
-                        <h2 id="targetMoveOne">Move One</h2>
-                    </div>
-
-                    <div class="container">
-                        <h2 id="targetMoveTwo">Move Two</h2>
-                    </div>
-
-                    <div class="container">
-                        <h2 id="targetMoveThree">Move Three</h2>
-                    </div>
-
-                    <div class="container">
-                        <h2 id="targetMoveFour">Move Four</h2>
-                    </div>
-
-                </div>
-
-                <form class="container" id="searchContainer">
-                    <input type="text" id="searchBox" placeholder="pokemon" class="form-control" value="">
-                    <input type="submit" id="pokeButton" class="btn btn-light">
-                </form>
-
-            </div>
+            <form class="container" id="searchContainer">
+                <input type="text" name="pokeName" id="searchBox" class="form-control" value="">
+                <input type="submit" id="pokeButton" class="btn btn-light">
+            </form>
 
         </div>
 
-    </section>
+    </div>
 
-</aside>
+</section>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="script.js"></script>
